@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/REPLACE_WITH_RELEASE_LINK">
+  <a href="https://github.com/Jumarf123/RSS-Collect/releases/download/1.0/RSS-Collector_1.0.0_x64-setup.exe">
     <img alt="Download RSS-Collector" src="https://img.shields.io/badge/Скачать%20%2F%20Download-RSS--Collector-2ea043?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
