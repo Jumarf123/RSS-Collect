@@ -1,0 +1,25 @@
+{
+  "name": "rss-collector",
+  "version": "1.0.0",
+  "description": "RSS-Collector",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 1420",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "tauri": "node scripts/run-tauri.mjs",
+    "tauri:dev": "node scripts/run-tauri.mjs dev",
+    "tauri:build": "node scripts/run-tauri.mjs build"
+  },
+  "keywords": [],
+  "author": "Jumarf",
+  "license": "LicenseRef-Proprietary",
+  "type": "module",
+  "dependencies": {
+    "@tauri-apps/api": "^2.10.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.10.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.1"
+  }
+}

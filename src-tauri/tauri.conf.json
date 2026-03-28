@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "RSS-Collector",
+  "version": "1.0.0",
+  "identifier": "com.jumarf.rsscollector",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "RSS-Collector",
+        "width": 1180,
+        "height": 820,
+        "minWidth": 760,
+        "minHeight": 600,
+        "center": true,
+        "resizable": true,
+        "fullscreen": false,
+        "maximizable": true,
+        "minimizable": true,
+        "closable": true,
+        "theme": "Dark",
+        "backgroundColor": "#090506",
+        "devtools": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "publisher": "Jumarf",
+    "copyright": "Copyright (C) 2026 Jumarf",
+    "license": "LicenseRef-Proprietary",
+    "licenseFile": "../LICENSE.txt",
+    "shortDescription": "RSS-Collector",
+    "longDescription": "RSS-Collector for launching bundled forensic tools from one minimal interface.",
+    "icon": ["icons/rss.ico"],
+    "resources": {
+      "../tools/": "tools/"
+    },
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "nsis": {
+        "installMode": "perMachine",
+        "languages": ["English", "Russian"],
+        "displayLanguageSelector": false,
+        "compression": "lzma",
+        "startMenuFolder": "RSS-Collector",
+        "installerIcon": "icons/rss.ico"
+      }
+    }
+  }
+}

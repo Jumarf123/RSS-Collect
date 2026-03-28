@@ -1,0 +1,8 @@
+RSS-Collector
+Copyright (C) 2026 Jumarf
+
+All rights reserved.
+
+This software, including the bundled tools and installer assets, may not be copied,
+modified, redistributed, sublicensed, sold, or published without prior written
+permission from the copyright holder.
