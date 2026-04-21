@@ -1,4 +1,4 @@
-# RSS-Collector v1.0.0 update 11.04.2026
+# RSS-Collector v1.0.0 update 21.04.2026
 
 <p align="center">
   <a href="#ru"><img alt="Русский" src="https://img.shields.io/badge/Русский-Read-1f6feb?style=for-the-badge" /></a>
@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Jumarf123/RSS-Collect/releases/download/1.0/RSS-Collector_1.0.0_x64-setup.exe">
+  <a href="https://github.com/Jumarf123/RSS-Collect/releases/download/1.1/RSS-Collector_1.1.0_x64-setup.exe">
     <img alt="Download RSS-Collector" src="https://img.shields.io/badge/Скачать%20%2F%20Download-RSS--Collector-2ea043?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
