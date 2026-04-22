@@ -1,4 +1,4 @@
-# RSS-Collector v1.1.0 update 21.04.2026
+# RSS-Collector v1.1.0 update 22.04.2026
 
 <p align="center">
   <a href="#ru"><img alt="Русский" src="https://img.shields.io/badge/Русский-Read-1f6feb?style=for-the-badge" /></a>
