@@ -13,7 +13,9 @@ if (extraLibDir) {
   environment.LIB = environment.LIB ? `${extraLibDir};${environment.LIB}` : extraLibDir;
 }
 
-const child = spawn(tauriBinary, process.argv.slice(2), {
+const command = process.platform === "win32" ? `"${tauriBinary}"` : tauriBinary;
+
+const child = spawn(command, process.argv.slice(2), {
   stdio: "inherit",
   env: environment,
   shell: process.platform === "win32",
