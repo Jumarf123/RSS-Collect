@@ -14,6 +14,7 @@ use std::os::windows::process::CommandExt;
 
 const CREATE_NO_WINDOW: u32 = 0x0800_0000;
 const LAUNCHABLE_EXTENSIONS: &[&str] = &["exe", "bat", "cmd"];
+const PREFERRED_BATCH_LAUNCHER: &str = "run_me.bat";
 
 #[derive(Clone, Debug)]
 struct ToolDescriptor {
@@ -235,6 +236,14 @@ fn collect_regular_targets(folder: &Path) -> Result<Vec<TargetDescriptor>, Strin
         });
     }
 
+    if let Some(preferred) = targets
+        .iter()
+        .find(|target| target.file_name.eq_ignore_ascii_case(PREFERRED_BATCH_LAUNCHER))
+        .cloned()
+    {
+        return Ok(vec![preferred]);
+    }
+
     targets.sort_by(|left, right| {
         left.file_name
             .to_lowercase()
@@ -336,6 +345,23 @@ mod tests {
             .collect::<Vec<_>>();
 
         assert_eq!(file_names, vec!["a-tool.bat", "BTool.exe"]);
+
+        fs::remove_dir_all(folder).expect("cleanup");
+    }
+
+    #[test]
+    fn run_me_batch_is_preferred_when_present() {
+        let folder = temp_case_dir("preferred_batch");
+        fs::write(folder.join("RSS-Analys.exe"), []).expect("write exe");
+        fs::write(folder.join("run_me.bat"), []).expect("write batch");
+
+        let targets = collect_regular_targets(&folder).expect("targets");
+        let file_names = targets
+            .iter()
+            .map(|target| target.file_name.as_str())
+            .collect::<Vec<_>>();
+
+        assert_eq!(file_names, vec!["run_me.bat"]);
 
         fs::remove_dir_all(folder).expect("cleanup");
     }
